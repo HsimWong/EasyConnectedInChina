@@ -1,6 +1,9 @@
 #!/usr/bin/env sh
 getPingVal(){
 	local domName=$1
-	echo `ping $domName -c 4 | tail -1 | awk -F '=' '{ print $2 }' | awk -F '/' '{ print $2 }'`
+	echo $({ time nc -v -z $domName 80;} 2>&1 | awk -F 'real' '{print $2}')
 }
+
+getPingVal github.com
+
 
