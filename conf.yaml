@@ -1,0 +1,25 @@
+root_sources:
+    - mirrors.aliyun.com
+    - mirrors.ustc.edu.cn
+	- douban.com
+	- mirrors.tuna.tsinghua.edu.cn
+	- mirrors.ustc.edu.cn
+
+pip:
+	linux_conf:
+		conf_path_root: "/root/.pip/pip.conf"
+		conf_path_unpr: "/home/<uname>/.pip/pip.conf"
+		source_url:
+			- "https://mirrors.aliyun.com/pypi/simple/"
+			- "https://pypi.mirrors.ustc.edu.cn/simple/"
+			- "http://pypi.douban.com/simple/"
+			- "https://pypi.tuna.tsinghua.edu.cn/simple/"
+			- "http://pypi.mirrors.ustc.edu.cn/simple/"
+		conf_script: >
+			[global]
+			index-url = <source_url>
+			[install]
+			trusted-host = <root_source>
+
+			
+
