@@ -21,5 +21,8 @@ pip:
 			[install]
 			trusted-host = <root_source>
 
+yum:
+	linux_conf:
+		
 			
 
